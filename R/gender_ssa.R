@@ -47,14 +47,12 @@ gender_ssa <- function(data, years, certainty) {
                              ifelse(proportion_female > 0.5, "female", "male")))  
   }
   
-  # Delete the male and female columns since we won't report them to the user
-  results$male <- NULL
-  results$female <- NULL
-  
   # Delete the certainty columns unless the user wants them
   if(!certainty) {
-    results$proportion_male <- NULL
+    results$proportion_male   <- NULL
     results$proportion_female <- NULL
+    results$male              <- NULL
+    results$female            <- NULL
   }  
   
   return(results)
